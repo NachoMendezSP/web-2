@@ -8,10 +8,10 @@
     background-size: cover;
   }
 
-
+/* Might change the width and height later */
 .container {
     background-color: #fff;
     max-width: 80%;
-    min-height: 600px;
+    min-height: 600px; 
 }
 
