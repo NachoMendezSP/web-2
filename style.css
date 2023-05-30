@@ -1,0 +1,17 @@
+.custom-background {
+    background-attachment: fixed; 
+    background-image: url('media/real.jpg'); 
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
+.container {
+    background-color: #fff;
+    max-width: 80%;
+    min-height: 600px;
+}
+

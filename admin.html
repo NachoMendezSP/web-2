@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Page - The eBook Emporium</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="custom-background">
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">The eBook Emporium</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <h2>Admin Page - Book Management</h2>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <!-- Add Book Form -->
+        <div class="card">
+          <div class="card-header">
+            Add Book
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Enter book title">
+              </div>
+              <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" class="form-control" id="author" placeholder="Enter book author">
+              </div>
+              <div class="form-group">
+                <label for="image">Image URL</label>
+                <input type="text" class="form-control" id="image" placeholder="Enter image URL">
+              </div>
+              <button type="submit" class="btn btn-primary">Add Book</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- Edit Book Form -->
+        <div class="card">
+          <div class="card-header">
+            Edit Book
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="edit-title">Title</label>
+                <input type="text" class="form-control" id="edit-title" placeholder="Enter book title">
+              </div>
+              <div class="form-group">
+                <label for="edit-author">Author</label>
+                <input type="text" class="form-control" id="edit-author" placeholder="Enter book author">
+              </div>
+              <div class="form-group">
+                <label for="edit-image">Image URL</label>
+                <input type="text" class="form-control" id="edit-image" placeholder="Enter image URL">
+              </div>
+              <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <!-- Delete Book Form -->
+        <div class="card">
+          <div class="card-header">
+            Delete Book
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="delete-title">Title</label>
+                <input type="text" class="form-control" id="delete-title" placeholder="Enter book title">
+              </div>
+              <button type="submit" class="btn btn-danger">Delete Book</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- List of Books -->
+        <div class="card">
+          <div class="card-header">
+            Book List
+          </div>
+          <div class="card-body">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search Books">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button">Search</button>
+                </div>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item">Book 1</li>
+              <li class="list-group-item">Book 2</li>
+              <li class="list-group-item">Book 3</li>
+              <!-- Add more books as needed -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
