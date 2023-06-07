@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up - The eBook Emporium</title>
+  <title>The eBook Emporium</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- It looked weird when trying to use the style.css sheet instead of this, assuming it's based on the priority -->
   <style>
     body {
       background-attachment: fixed; 
-      background-image: url('media/real.jpg');
+      background-image: url('media/background.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -49,7 +49,7 @@
               <label for="confirm-password">Confirm Password</label>
               <input type="password" id="confirm-password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            <button type="button" id="signup-button" class="btn btn-primary btn-block">Sign Up</button>
           </form>
           <div class="text-center mt-3">
             <p>Already have an account? <a href="login.html">Log in</a></p>
@@ -59,6 +59,7 @@
     </div>
   </div>
 
+  <script src="signup.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

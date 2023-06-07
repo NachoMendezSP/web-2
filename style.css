@@ -1,6 +1,6 @@
 .custom-background {
     background-attachment: fixed; 
-    background-image: url('media/real.jpg'); 
+    background-image: url('media/background.jpg'); 
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -14,4 +14,3 @@
     max-width: 80%;
     min-height: 600px; 
 }
-

@@ -13,126 +13,106 @@
 <body class="custom-background">
 
   <!-- Navigation Bar -->
-  <!-- Might remove some options on this bar since most of it redirects to this page -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">The eBook Emporium</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="browseGenresDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Browse by Genre
-          </a>
-          <div class="dropdown-menu" aria-labelledby="browseGenresDropdown">
-            <a class="dropdown-item" href="#">Mystery</a>
-            <a class="dropdown-item" href="#">Science Fiction</a>
-            <a class="dropdown-item" href="#">Fantasy</a>
-            <!-- Add more genres as needed -->
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="browseAuthorsDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Browse by Author
-          </a>
-          <div class="dropdown-menu" aria-labelledby="browseAuthorsDropdown">
-            <a class="dropdown-item" href="#">Author 1</a>
-            <a class="dropdown-item" href="#">Author 2</a>
-            <a class="dropdown-item" href="#">Author 3</a>
-            <!-- Add more authors as needed -->
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="books.html">All Books</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="login.html">Login</a>
-        </li>
-        <li class="nav-item">
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="index.html">The eBook Emporium</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="browseGenresDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Browse by Genre
+        </a>
+        <div class="dropdown-menu" aria-labelledby="browseGenresDropdown">
+          <!-- Links should redirect to the books section, but with the appropiate filter -->
+          <a class="dropdown-item" href="books.html?genre=Mystery">Mystery</a>
+          <a class="dropdown-item" href="books.html?genre=Science%20Fiction">Science Fiction</a>
+          <a class="dropdown-item" href="books.html?genre=Fantasy">Fantasy</a>
+          <!-- Add more genres as needed -->
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="books.html">More...</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="browseAuthorsDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Browse by Author
+        </a>
+        <div class="dropdown-menu" aria-labelledby="browseAuthorsDropdown">
+          <!-- Links should redirect to the books section, but with the appropiate filter -->
+          <a class="dropdown-item" href="books.html?author=Ernest%20Cline">Ernest Cline</a>
+          <a class="dropdown-item" href="books.html?author=Stephen%20King">Stephen King</a>
+          <a class="dropdown-item" href="books.html?author=Isaac%20Asimov">Isaac Asimov</a>
+          <!-- Add more authors as needed -->
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="books.html">More...</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="books.html">Explore</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">Log in</a>
+      </li>
+      <li class="nav-item">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+</nav>
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container mt-4">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-3 mt-3">
         <!-- Filters -->
-        <!-- Most of it will be with the backend and JS -->
         <div class="filters-container">
           <h5>Filters</h5>
           <form>
             <div class="form-group">
               <label for="genre-filter">Genre</label>
               <select class="form-control" id="genre-filter">
-                <option>All Genres</option>
-                <option>Mystery</option>
-                <option>Science Fiction</option>
-                <option>Fantasy</option>
-                <!-- Add more genres as needed -->
+                <option value="0">All Genres</option>
+                <option value="1">Mystery</option>
+                <option value="2">Science Fiction</option>
+                <option value="3">Fantasy</option>
+                <option value="4">Horror</option>
               </select>
             </div>
             <div class="form-group">
               <label for="author-filter">Author</label>
               <select class="form-control" id="author-filter">
-                <option>All Authors</option>
-                <option>Author 1</option>
-                <option>Author 2</option>
-                <option>Author 3</option>
-                <!-- Add more authors as needed -->
+                <option value="0">All Authors</option>
+                <option value="1">Ernest Cline</option>
+                <option value="2">J. K. Rowling</option>
+                <option value="3">Stephen King</option>
+                <option value="4">Isaac Asimov</option>
+                <option value="5">H. P. Lovecraft</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary">Apply Filters</button>
+            <button type="button" class="btn btn-primary" id="apply-filters-btn">Apply Filters</button>
           </form>
         </div>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-9 mt-3">
         <!-- Book Cards -->
-        <div class="books-container">
+          <div class="books-container">
           <h2>Your Books</h2>
           <div class="row">
-            <div class="col-md-4">
-              <div class="book-card">
-                <img src="media/book1.jpg" class="card-img-top" alt="Book 1">
-                <div class="card-body">
-                  <h5 class="card-title">Book 1</h5>
-                  <p class="card-text">Author 1</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="book-card">
-                <img src="media/book2.jpg" class="card-img-top" alt="Book 2">
-                <div class="card-body">
-                  <h5 class="card-title">Book 2</h5>
-                  <p class="card-text">Author 2</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="book-card">
-                <img src="media/book3.jpg" class="card-img-top" alt="Book 3">
-                <div class="card-body">
-                  <h5 class="card-title">Book 3</h5>
-                  <p class="card-text">Author 3</p>
-                </div>
-              </div>
-            </div>
-            <!-- Add more book cards as needed -->
+            <!-- Book cards will be dynamically added here -->
           </div>
         </div>
       </div>
     </div>
   </div>
+  
+ <script src="books.js"></script>
 
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

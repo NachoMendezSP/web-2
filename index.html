@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script src="index.js"></script>
  
 </head>
 
@@ -16,7 +16,7 @@
 
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">The eBook Emporium</a>
+    <a class="navbar-brand" href="index.html">The eBook Emporium</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -30,9 +30,9 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="browseGenresDropdown">
             <!-- Links should redirect to the books section, but with the appropiate filter -->
-            <a class="dropdown-item" href="#">Mystery</a>
-            <a class="dropdown-item" href="#">Science Fiction</a>
-            <a class="dropdown-item" href="#">Fantasy</a>
+            <a class="dropdown-item" href="books.html?genre=Mystery">Mystery</a>
+            <a class="dropdown-item" href="books.html?genre=Science%20Fiction">Science Fiction</a>
+            <a class="dropdown-item" href="books.html?genre=Fantasy">Fantasy</a>
             <!-- Add more genres as needed -->
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="books.html">More...</a>
@@ -45,9 +45,9 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="browseAuthorsDropdown">
             <!-- Links should redirect to the books section, but with the appropiate filter -->
-            <a class="dropdown-item" href="#">Author 1</a>
-            <a class="dropdown-item" href="#">Author 2</a>
-            <a class="dropdown-item" href="#">Author 3</a>
+            <a class="dropdown-item" href="books.html?author=Ernest%20Cline">Ernest Cline</a>
+            <a class="dropdown-item" href="books.html?author=Stephen%20King">Stephen King</a>
+            <a class="dropdown-item" href="books.html?author=Isaac%20Asimov">Isaac Asimov</a>
             <!-- Add more authors as needed -->
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="books.html">More...</a>
@@ -71,117 +71,15 @@
   
 
   <!-- Main Page -->
+  <!-- Could possibly add a "Recommended for you" section for a logged user-->
   <div class="container mt-4">
     <h2>Most Popular Books</h2>
     <div id="popular-books-container" class="row"></div>
   
-    <h2>Most Recent Books</h2>
+    <h2>Recently Added Books</h2>
     <div id="latest-books-container" class="row"></div>
   </div>
   
-
-
-  <!-- Still need to add links to the author and book name separated from the whole book card 
-  <div class="container mt-4">
-    <h2>Most Popular Books</h2>
-    <div class="row">
-        <div class="col-md-3">
-          <a href="#" class="card-link">
-          <div class="card">
-            <img src="media/book1.jpg" class="card-img-top" alt="Book 5">
-            <div class="card-body">
-              <h5 class="card-title">Book 5</h5>
-              <p class="card-text">Author 5</p>
-            </div>
-          </div>
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#" class="card-link">
-          <div class="card">
-            <img src="media/book2.jpg" class="card-img-top" alt="Book 6">
-            <div class="card-body">
-              <h5 class="card-title">Book 6</h5>
-              <p class="card-text">Author 6</p>
-            </div>
-          </div>
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#" class="card-link">
-          <div class="card">
-            <img src="media/book3.jpg" class="card-img-top" alt="Book 7">
-            <div class="card-body">
-              <h5 class="card-title">Book 7</h5>
-              <p class="card-text">Author 7</p>
-            </div>
-          </div>
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#" class="card-link">
-          <div class="card">
-            <img src="media/book4.jpg" class="card-img-top" alt="Book 8">
-            <div class="card-body">
-              <h5 class="card-title">Book 8</h5>
-              <p class="card-text">Author 8</p>
-            </div>
-          </div>
-          </a>
-        </div>
-      </div>
-
-    <h2>Most Recent Books</h2>
-    <div class="row">
-        <div class="col-md-3">
-          <a href="#" class="card-link">
-          <div class="card">
-            <img src="media/book1.jpg" class="card-img-top" alt="Book 5">
-            <div class="card-body">
-              <h5 class="card-title">Book 5</h5>
-              <p class="card-text">Author 5</p>
-            </div>
-          </div>
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#" class="card-link">
-          <div class="card">
-            <img src="media/book2.jpg" class="card-img-top" alt="Book 6">
-            <div class="card-body">
-              <h5 class="card-title">Book 6</h5>
-              <p class="card-text">Author 6</p>
-            </div>
-          </div>
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#" class="card-link">
-          <div class="card">
-            <img src="media/book3.jpg" class="card-img-top" alt="Book 7">
-            <div class="card-body">
-              <h5 class="card-title">Book 7</h5>
-              <p class="card-text">Author 7</p>
-            </div>
-          </div>
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#" class="card-link">
-          <div class="card">
-            <img src="media/book4.jpg" class="card-img-top" alt="Book 8">
-            <div class="card-body">
-              <h5 class="card-title">Book 8</h5>
-              <p class="card-text">Author 8</p>
-            </div>
-          </div>
-          </a>
-        </div>
-      </div>
-    </div>  
-    
-  </div>
--->
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

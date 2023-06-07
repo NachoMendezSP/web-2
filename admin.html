@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Page - The eBook Emporium</title>
+  <title>The eBook Emporium</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Custom CSS -->
@@ -23,114 +23,248 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Log out</a>
+          <a class="nav-link" href="index.html">Log out</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <!-- Page Content -->
-  <div class="container">
-    <h2>Admin Page - Book Management</h2>
-    <div class="row mt-4">
-      <div class="col-md-6">
-        <!-- Add Book Form -->
-        <div class="card">
-          <div class="card-header">
-            Add Book
-          </div>
-          <div class="card-body">
-            <form>
-              <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" placeholder="Enter book title">
-              </div>
-              <div class="form-group">
-                <label for="author">Author</label>
-                <input type="text" class="form-control" id="author" placeholder="Enter book author">
-              </div>
-              <div class="form-group">
-                <label for="image">Image URL</label>
-                <input type="text" class="form-control" id="image" placeholder="Enter image URL">
-              </div>
-              <button type="submit" class="btn btn-primary">Add Book</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <!-- Edit Book Form -->
-        <div class="card">
-          <div class="card-header">
-            Edit Book
-          </div>
-          <div class="card-body">
-            <form>
-              <div class="form-group">
-                <label for="edit-title">Title</label>
-                <input type="text" class="form-control" id="edit-title" placeholder="Enter book title">
-              </div>
-              <div class="form-group">
-                <label for="edit-author">Author</label>
-                <input type="text" class="form-control" id="edit-author" placeholder="Enter book author">
-              </div>
-              <div class="form-group">
-                <label for="edit-image">Image URL</label>
-                <input type="text" class="form-control" id="edit-image" placeholder="Enter image URL">
-              </div>
-              <button type="submit" class="btn btn-primary">Save Changes</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col-md-6">
-        <!-- Delete Book Form -->
-        <div class="card">
-          <div class="card-header">
-            Delete Book
-          </div>
-          <div class="card-body">
-            <form>
-              <div class="form-group">
-                <label for="delete-title">Title</label>
-                <input type="text" class="form-control" id="delete-title" placeholder="Enter book title">
-              </div>
-              <button type="submit" class="btn btn-danger">Delete Book</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <!-- List of Books -->
-        <div class="card">
-          <div class="card-header">
-            Book List
-          </div>
-          <div class="card-body">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search Books">
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="button">Search</button>
+  <div class="container mt-4">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#add-book">Add Book</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#delete-book">Delete Book</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#edit-book">Edit Book</a>
+      </li>
+    </ul>
+    
+    <div class="tab-content">
+      <!-- Add Book Tab -->
+      <div class="tab-pane fade show active" id="add-book">
+        <div class="container">
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <h2>Add Book</h2>
+              <form id="add-book-form">
+                <div class="form-group">
+                  <label for="add-book-name">Book Name</label>
+                  <input type="text" id="add-book-name" class="form-control">
                 </div>
+                <div class="form-group">
+                  <label for="add-book-author">Author ID</label>
+                  <input type="text" id="add-book-author" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="add-book-image">Image URL</label>
+                  <input type="text" id="add-book-image" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="add-book-description">Description</label>
+                  <textarea id="add-book-description" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Book</button>
+              </form>
             </div>
-            <ul class="list-group">
-              <li class="list-group-item">Book 1</li>
-              <li class="list-group-item">Book 2</li>
-              <li class="list-group-item">Book 3</li>
-              <!-- Add more books as needed -->
-            </ul>
           </div>
         </div>
       </div>
+    
+      <!-- Delete Book Tab -->
+      <div class="tab-pane fade" id="delete-book">
+        <div class="container">
+          <div class="row mt-3">
+            <div class="col-md-10">
+              <h2>Delete Book</h2>
+              <ul id="book-list" class="list-group">
+                <!-- List of books will be dynamically populated here -->
+              </ul>
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+    
+      <!-- Edit Book Tab -->
+      <div class="tab-pane fade" id="edit-book">
+        <div class="container">
+          <div class="row mt-3">
+            <div class="col-md-10">
+              <h2>Edit Book</h2>
+              <ul id="edit-book-list" class="list-group">
+                <!-- List of books with expandable items will be dynamically populated here -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
     </div>
+    
   </div>
+  
 
-  <!-- Bootstrap JS -->
+ 
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Fetch all books and populate the book list
+function fetchBooks() {
+  fetch('http://localhost:3000/books')
+    .then(response => response.json())
+    .then(books => {
+      const bookList = document.getElementById('book-list');
+      bookList.innerHTML = '';
+
+      books.forEach(book => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('list-group-item');
+        listItem.innerHTML = `<strong>Name:</strong> ${book.name}, <strong>Author:</strong> ${book.authorId}`;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('btn', 'btn-danger', 'btn-sm', 'float-right');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', () => deleteBook(book.id));
+
+        listItem.appendChild(deleteButton);
+        bookList.appendChild(listItem);
+      });
+    });
+}
+
+// Delete a book
+function deleteBook(bookId) {
+  fetch(`http://localhost:3000/books/${bookId}`, { method: 'DELETE' })
+    .then(() => {
+      // Refresh book list after deletion
+      fetchBooks();
+    });
+}
+
+// Fetch all books and populate the edit book list
+function fetchBooksForEditing() {
+  fetch('http://localhost:3000/books')
+    .then(response => response.json())
+    .then(books => {
+      const editBookList = document.getElementById('edit-book-list');
+      editBookList.innerHTML = '';
+
+      books.forEach(book => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('list-group-item');
+        listItem.innerHTML = `
+          <div class="d-flex justify-content-between">
+            <div>
+              <span><strong>Name:</strong> ${book.name}</span>
+              <span><strong>Author:</strong> ${book.authorId}</span>
+            </div>
+            <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#edit-book-${book.id}">Edit</button>
+          </div>
+          <div id="edit-book-${book.id}" class="collapse">
+            <div class="form-group">
+              <label for="edit-book-image-${book.id}">Image URL</label>
+              <input type="text" id="edit-book-image-${book.id}" class="form-control" value="${book.image}">
+            </div>
+            <div class="form-group">
+              <label for="edit-book-name-${book.id}">Book Name</label>
+              <input type="text" id="edit-book-name-${book.id}" class="form-control" value="${book.name}">
+            </div>
+            <div class="form-group">
+              <label for="edit-book-author-${book.id}">Author ID</label>
+              <input type="text" id="edit-book-author-${book.id}" class="form-control" value="${book.authorId}">
+            </div>
+            <div class="form-group">
+              <label for="edit-book-description-${book.id}">Description</label>
+              <textarea id="edit-book-description-${book.id}" class="form-control">${book.description}</textarea>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="saveBookChanges(${book.id})">Save Changes</button>
+            <button class="btn btn-secondary btn-sm" data-toggle="collapse" data-target="#edit-book-${book.id}">Cancel</button>
+          </div>
+        `;
+
+        editBookList.appendChild(listItem);
+      });
+    });
+}
+
+// Save changes for an edited book
+function saveBookChanges(bookId) {
+  const imageInput = document.getElementById(`edit-book-image-${bookId}`);
+  const nameInput = document.getElementById(`edit-book-name-${bookId}`);
+  const authorInput = document.getElementById(`edit-book-author-${bookId}`);
+  const descriptionInput = document.getElementById(`edit-book-description-${bookId}`);
+
+  const updatedBook = {
+    image: imageInput.value,
+    name: nameInput.value,
+    authorId: authorInput.value,
+    description: descriptionInput.value
+  };
+
+  fetch(`http://localhost:3000/books/${bookId}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(updatedBook)
+  })
+    .then(() => {
+      // Refresh book list after saving changes
+      fetchBooksForEditing();
+    });
+}
+
+// Event listener for the add book form
+const addBookForm = document.getElementById('add-book-form');
+addBookForm.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const nameInput = document.getElementById('add-book-name');
+  const authorInput = document.getElementById('add-book-author');
+  const imageInput = document.getElementById('add-book-image');
+  const descriptionInput = document.getElementById('add-book-description');
+
+  const newBook = {
+    name: nameInput.value,
+    authorId: authorInput.value,
+    image: imageInput.value,
+    description: descriptionInput.value
+  };
+
+  fetch('http://localhost:3000/books', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newBook)
+  })
+    .then(() => {
+      // Clear input fields after adding a book
+      nameInput.value = '';
+      authorInput.value = '';
+      imageInput.value = '';
+      descriptionInput.value = '';
+
+      // Refresh book list after adding a book
+      fetchBooks();
+    });
+});
+
+// Event listener for tab changes
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  const targetTab = $(e.target).attr('href');
+
+  if (targetTab === '#delete-book') {
+    // Fetch books for deletion
+    fetchBooks();
+  } else if (targetTab === '#edit-book') {
+    // Fetch books for editing
+    fetchBooksForEditing();
+  }
+});
+
+  </script>
 </body>
 
 </html>
