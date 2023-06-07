@@ -111,20 +111,6 @@
       "image": "media/book8.jpg",
       "description": "This is book 8.",
       "downloads": 160
-    },
-    {
-      "name": "Troy",
-      "authorId": "1",
-      "image": "media/book1.jpg",
-      "description": "Test",
-      "id": 9
-    },
-    {
-      "name": "301",
-      "authorId": "3",
-      "image": "media/book1.jpg",
-      "description": "Test test",
-      "id": 10
     }
   ],
   "users": [
