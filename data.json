@@ -1,0 +1,83 @@
+{
+    "genres": [
+        {
+          "id": 1,
+          "name": "Mystery"
+        },
+        {
+          "id": 2,
+          "name": "Science Fiction"
+        },
+        {
+          "id": 3,
+          "name": "Fantasy"
+        }
+    ],
+    "books": [
+        {
+          "id": 1,
+          "name": "Book 1",
+          "genreId": 1,
+          "image": "media/book1.jpg",
+          "description": "This is book 1.",
+          "downloads": 100
+        },
+        {
+          "id": 2,
+          "name": "Book 2",
+          "genreId": 2,
+          "image": "media/book2.jpg",
+          "description": "This is book 2.",
+          "downloads": 200
+        },
+        {
+          "id": 3,
+          "name": "Book 3",
+          "genreId": 3,
+          "image": "media/book3.jpg",
+          "description": "This is book 3.",
+          "downloads": 150
+        },
+        {
+          "id": 4,
+          "name": "Book 4",
+          "genreId": 1,
+          "image": "media/book4.jpg",
+          "description": "This is book 4.",
+          "downloads": 120
+        },
+        {
+          "id": 5,
+          "name": "Book 5",
+          "genreId": 2,
+          "image": "media/book5.jpg",
+          "description": "This is book 5.",
+          "downloads": 180
+        },
+        {
+          "id": 6,
+          "name": "Book 6",
+          "genreId": 3,
+          "image": "media/book6.jpg",
+          "description": "This is book 6.",
+          "downloads": 90
+        },
+        {
+          "id": 7,
+          "name": "Book 7",
+          "genreId": 1,
+          "image": "media/book7.jpg",
+          "description": "This is book 7.",
+          "downloads": 140
+        },
+        {
+          "id": 8,
+          "name": "Book 8",
+          "genreId": 2,
+          "image": "media/book8.jpg",
+          "description": "This is book 8.",
+          "downloads": 160
+        }
+    ]      
+}
+  
