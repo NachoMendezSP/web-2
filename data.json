@@ -11,36 +11,66 @@
         {
           "id": 3,
           "name": "Fantasy"
+        },
+        {
+          "id": 4,
+          "name": "Horror"
+        }
+    ],
+    "authors": [
+        {
+          "id": 1,
+          "name": "Ernest Cline"
+        },
+        {
+          "id": 2,
+          "name": "J. K. Rowling"
+        },
+        {
+          "id": 3,
+          "name": "Stephen King"
+        },
+        {
+          "id": 4,
+          "name": "Isaac Asimov"
+        },
+        {
+          "id": 5,
+          "name": "H. P. Lovecraft"
         }
     ],
     "books": [
         {
           "id": 1,
-          "name": "Book 1",
-          "genreId": 1,
+          "name": "Ready Player One",
+          "authorId": 1,
+          "genreId": 2,
           "image": "media/book1.jpg",
           "description": "This is book 1.",
           "downloads": 100
         },
         {
           "id": 2,
-          "name": "Book 2",
-          "genreId": 2,
+          "name": "It",
+          "authorId": 3,
+          "genreId": 4,
           "image": "media/book2.jpg",
           "description": "This is book 2.",
           "downloads": 200
         },
         {
           "id": 3,
-          "name": "Book 3",
-          "genreId": 3,
+          "name": "Narrativa Completa",
+          "authorId": 5,
+          "genreId": 4,
           "image": "media/book3.jpg",
           "description": "This is book 3.",
           "downloads": 150
         },
         {
           "id": 4,
-          "name": "Book 4",
+          "name": "El visitante",
+          "authorId": 3,
           "genreId": 1,
           "image": "media/book4.jpg",
           "description": "This is book 4.",
@@ -48,7 +78,8 @@
         },
         {
           "id": 5,
-          "name": "Book 5",
+          "name": "El hombre del bicentenario",
+          "authorId": 4,
           "genreId": 2,
           "image": "media/book5.jpg",
           "description": "This is book 5.",
@@ -56,24 +87,27 @@
         },
         {
           "id": 6,
-          "name": "Book 6",
-          "genreId": 3,
+          "name": "El fin de la eternidad",
+          "authorId": 4,
+          "genreId": 2,
           "image": "media/book6.jpg",
           "description": "This is book 6.",
           "downloads": 90
         },
         {
           "id": 7,
-          "name": "Book 7",
-          "genreId": 1,
+          "name": "Harry Potter y la piedra filosofal",
+          "authorId": 2,
+          "genreId": 3,
           "image": "media/book7.jpg",
           "description": "This is book 7.",
           "downloads": 140
         },
         {
           "id": 8,
-          "name": "Book 8",
-          "genreId": 2,
+          "name": "Harry Potter y las reliquias de la muerte",
+          "authorId": 2,
+          "genreId": 3,
           "image": "media/book8.jpg",
           "description": "This is book 8.",
           "downloads": 160

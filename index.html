@@ -8,6 +8,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+ 
 </head>
 
 <body class="custom-background">
@@ -33,7 +35,7 @@
             <a class="dropdown-item" href="#">Fantasy</a>
             <!-- Add more genres as needed -->
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">More...</a>
+            <a class="dropdown-item" href="books.html">More...</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -48,7 +50,7 @@
             <a class="dropdown-item" href="#">Author 3</a>
             <!-- Add more authors as needed -->
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">More...</a>
+            <a class="dropdown-item" href="books.html">More...</a>
           </div>
         </li>
         <li class="nav-item">
@@ -69,7 +71,17 @@
   
 
   <!-- Main Page -->
-  <!-- Still need to add links to the author and book name separated from the whole book card -->
+  <div class="container mt-4">
+    <h2>Most Popular Books</h2>
+    <div id="popular-books-container" class="row"></div>
+  
+    <h2>Most Recent Books</h2>
+    <div id="latest-books-container" class="row"></div>
+  </div>
+  
+
+
+  <!-- Still need to add links to the author and book name separated from the whole book card 
   <div class="container mt-4">
     <h2>Most Popular Books</h2>
     <div class="row">
@@ -166,56 +178,10 @@
           </a>
         </div>
       </div>
-
-    <h2>Recommended for you</h2>
-    <div class="row">
-      <div class="col-md-3">
-        <a href="#" class="card-link">
-        <div class="card">
-          <img src="media/book1.jpg" class="card-img-top" alt="Book 5">
-          <div class="card-body">
-            <h5 class="card-title">Book 5</h5>
-            <p class="card-text">Author 5</p>
-          </div>
-        </div>
-        </a>
-      </div>
-      <div class="col-md-3">
-        <a href="#" class="card-link">
-        <div class="card">
-          <img src="media/book2.jpg" class="card-img-top" alt="Book 6">
-          <div class="card-body">
-            <h5 class="card-title">Book 6</h5>
-            <p class="card-text">Author 6</p>
-          </div>
-        </div>
-        </a>
-      </div>
-      <div class="col-md-3">
-        <a href="#" class="card-link">
-        <div class="card">
-          <img src="media/book3.jpg" class="card-img-top" alt="Book 7">
-          <div class="card-body">
-            <h5 class="card-title">Book 7</h5>
-            <p class="card-text">Author 7</p>
-          </div>
-        </div>
-        </a>
-      </div>
-      <div class="col-md-3">
-        <a href="#" class="card-link">
-        <div class="card">
-          <img src="media/book4.jpg" class="card-img-top" alt="Book 8">
-          <div class="card-body">
-            <h5 class="card-title">Book 8</h5>
-            <p class="card-text">Author 8</p>
-          </div>
-        </div>
-        </a>
-      </div>
-    </div>
+    </div>  
+    
   </div>
-
+-->
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
