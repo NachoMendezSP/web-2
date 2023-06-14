@@ -127,6 +127,13 @@
       "username": "Ignacio",
       "password": "456",
       "admin": 1
+    },
+    {
+      "email": "user2@gmail.com",
+      "username": "Pablo",
+      "password": "123",
+      "admin": 0,
+      "id": 3
     }
   ]
 }

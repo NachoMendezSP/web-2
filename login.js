@@ -1,37 +1,68 @@
-// Function to handle the login process
 async function handleLogin(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    // Get the values from the input fields
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  const emailError = document.getElementById('email-error');
+  const passwordError = document.getElementById('password-error');
 
-    try {
-      // Fetch the users data from the JSON server
-      const response = await fetch('http://localhost:3000/users');
-      const users = await response.json();
+  // Reset error messages
+  emailError.textContent = '';
+  passwordError.textContent = '';
 
-      // Find the user with the matching email and password
-      const user = users.find(u => u.email === email && u.password === password);
+  // Get the values from the input fields
+  const email = emailInput.value;
+  const password = passwordInput.value;
 
-      if (user) {
-        // User found
-        if (user.admin === 1) {
-          // Redirect to admin page for admin users
-          window.location.href = 'admin.html';
-        } else {
-          // Redirect to index page for regular users
-          window.location.href = 'index.html';
-        }
-      } else {
-        // User not found, display an error message
-        alert('Invalid email or password');
-      }
-    } catch (error) {
-      console.log('Error fetching users:', error);
-    }
+  // Validate email
+  if (email.trim() === '') {
+    emailError.textContent = 'Please enter your email.';
+    emailError.classList.add('text-danger');
+    return;
   }
 
-  // Attach event listener to the login button
-  const loginBtn = document.querySelector('.login-container button');
-  loginBtn.addEventListener('click', handleLogin);
+  // Validate password
+  if (password.trim() === '') {
+    passwordError.textContent = 'Please enter your password.';
+    passwordError.classList.add('text-danger');
+    return;
+  }
+
+  try {
+    // Fetch the users data from the JSON server
+    const response = await fetch('http://localhost:3000/users');
+    const users = await response.json();
+
+    // Find the user with the matching email and password
+    const user = users.find((u) => u.email === email && u.password === password);
+
+    if (user) {
+      // User found
+  
+      // Save the logged-in user information to localStorage
+      const currentUser = {
+        email: user.email,
+        isAdmin: user.admin === 1,
+      };
+      localStorage.setItem('currentUser', JSON.stringify(currentUser));
+  
+      if (user.admin === 1) {
+        // Redirect to admin page for admin users
+        window.location.href = 'admin.html';
+      } else {
+        // Redirect to index page for regular users
+        window.location.href = 'index.html';
+      }
+    } else {
+      // User not found, display an error message
+      emailError.textContent = 'Invalid email or password';
+      emailError.classList.add('text-danger');
+    }
+  }   catch (error) {
+    console.log('Error fetching users:', error);
+  }
+}
+
+// Attach event listener to the login button
+const loginBtn = document.querySelector('.login-container button');
+loginBtn.addEventListener('click', handleLogin);
