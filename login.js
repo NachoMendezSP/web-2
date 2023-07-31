@@ -41,6 +41,7 @@ async function handleLogin(event) {
   
       // Save the logged-in user information to localStorage
       const currentUser = {
+        userId: user.id,
         email: user.email,
         isAdmin: user.admin === 1,
       };

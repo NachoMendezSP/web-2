@@ -47,7 +47,13 @@
       "genreId": 2,
       "image": "media/book1.jpg",
       "description": "This is book 1.",
-      "downloads": 100
+      "downloads": 100,
+      "rating": 4.5,
+      "ratingsAmount": 2,
+      "ratings": [
+        5,
+        4
+      ]
     },
     {
       "id": 2,
@@ -55,8 +61,19 @@
       "authorId": 3,
       "genreId": 4,
       "image": "media/book2.jpg",
-      "description": "This is book 2.",
-      "downloads": 200
+      "description": "¿Quién o qué mutila y mata a los niños de un pequeño pueblo norteamericano? ¿Por qué llega cíclicamente el horror a Derry en forma de un payaso siniestro que va sembrando la destrucción a su paso? Esto es lo que se proponen averiguar los protagonistas de esta novela. Tras veintisiete años de tranquilidad y lejanía una antigua promesa infantil les hace volver al lugar en el que vivieron su infancia y juventud como una terrible pesadilla. Regresan a Derry para enfrentarse con su pasado y enterrar definitivamente la amenaza que los amargó durante su niñez. Saben que pueden morir, pero son conscientes de que no conocerán la paz hasta que aquella cosa sea destruida para siempre. It es una de las novelas más ambiciosas de Stephen King, donde ha logrado perfeccionar de un modo muy personal las claves del género de terror.",
+      "downloads": 202,
+      "rating": 4.142857142857143,
+      "ratingsAmount": 7,
+      "ratings": [
+        4,
+        4,
+        5,
+        5,
+        2,
+        4,
+        5
+      ]
     },
     {
       "id": 3,
@@ -65,7 +82,13 @@
       "genreId": 4,
       "image": "media/book3.jpg",
       "description": "This is book 3.",
-      "downloads": 150
+      "downloads": 151,
+      "rating": 4.5,
+      "ratingsAmount": 2,
+      "ratings": [
+        4,
+        5
+      ]
     },
     {
       "id": 4,
@@ -74,7 +97,12 @@
       "genreId": 1,
       "image": "media/book4.jpg",
       "description": "This is book 4.",
-      "downloads": 120
+      "downloads": 120,
+      "rating": 4.2,
+      "ratingsAmount": 1,
+      "ratings": [
+        4
+      ]
     },
     {
       "id": 5,
@@ -83,7 +111,12 @@
       "genreId": 2,
       "image": "media/book5.jpg",
       "description": "This is book 5.",
-      "downloads": 180
+      "downloads": 180,
+      "rating": 4.7,
+      "ratingsAmount": 1,
+      "ratings": [
+        5
+      ]
     },
     {
       "id": 6,
@@ -92,7 +125,12 @@
       "genreId": 2,
       "image": "media/book6.jpg",
       "description": "This is book 6.",
-      "downloads": 90
+      "downloads": 90,
+      "rating": 3.5,
+      "ratingsAmount": 1,
+      "ratings": [
+        3
+      ]
     },
     {
       "id": 7,
@@ -101,7 +139,12 @@
       "genreId": 3,
       "image": "media/book7.jpg",
       "description": "This is book 7.",
-      "downloads": 140
+      "downloads": 140,
+      "rating": 4.9,
+      "ratingsAmount": 1,
+      "ratings": [
+        5
+      ]
     },
     {
       "id": 8,
@@ -110,7 +153,12 @@
       "genreId": 3,
       "image": "media/book8.jpg",
       "description": "This is book 8.",
-      "downloads": 160
+      "downloads": 160,
+      "rating": 4.8,
+      "ratingsAmount": 1,
+      "ratings": [
+        5
+      ]
     }
   ],
   "users": [
@@ -129,11 +177,61 @@
       "admin": 1
     },
     {
+      "id": 3,
       "email": "user2@gmail.com",
       "username": "Pablo",
       "password": "123",
-      "admin": 0,
-      "id": 3
+      "admin": 0
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "bookId": 1,
+      "userId": 2,
+      "text": "Great book!"
+    },
+    {
+      "id": 2,
+      "bookId": 1,
+      "userId": 3,
+      "text": "Loved it!"
+    },
+    {
+      "id": 3,
+      "bookId": 2,
+      "userId": 2,
+      "text": "Scary and thrilling!"
+    },
+    {
+      "id": 4,
+      "bookId": 3,
+      "userId": 1,
+      "text": "Beautiful collection."
+    },
+    {
+      "id": 5,
+      "bookId": 5,
+      "userId": 3,
+      "text": "A classic!"
+    },
+    {
+      "id": 6,
+      "bookId": 7,
+      "userId": 2,
+      "text": "Magical world."
+    },
+    {
+      "bookId": 2,
+      "userId": 1,
+      "text": "Test",
+      "id": 7
+    },
+    {
+      "bookId": 8,
+      "userId": 1,
+      "text": "Batchest!",
+      "id": 8
     }
   ]
 }

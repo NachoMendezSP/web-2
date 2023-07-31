@@ -40,20 +40,41 @@
   <!-- Main Page -->
   
   <div class="container mt-4">
-    <br>
     <div class="row">
-      <div class="col-md-3 justify-content-center">
-        <img id="book-image" class="img-fluid">
-        <a id="download-button" class="btn btn-primary btn-block mt-3" href="#" download>Download</a>
+      <div class="col-md-3 mt-3">
+        <!-- Image -->
+        <img id="book-image" class="img-fluid mb-3">
       </div>
-      <div class="col-md-8">
+      <div class="col-md-9 mt-3">
+        <!-- Book Details -->
         <h1 id="book-title"></h1>
         <h5 id="book-author" class="text-muted"></h5>
         <p id="book-description"></p>
+        <div class="form-group">
+          <label for="rating-input">Rate this book!</label>
+          <div class="rating-input-container">
+            <input type="range" id="rating-input" class="form-range" min="1" max="5" step="1">
+            <button type="button" id="rate-button" class="btn btn-primary">Submit</button>
+          </div>
+          <p id="current-rating" class="mt-2"></p>
+          <a id="download-button" class="btn btn-primary btn-lg btn-download mt-2" href="#" download>Download</a>
+        </div>
       </div>
     </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <!-- Comments Section -->
+        <h3>Comments</h3>
+        <p id="comments-message"></p>
+        <div id="comments-list"></div>
+        <div class="form-group mt-3">
+          <label for="comment-input">Leave a comment!</label>
+          <input type="text" id="comment-input" class="form-control">
+          <button type="button" id="comment-button" class="btn btn-primary mt-2">Post</button>
+        </div>
+      </div>
+    </div>   
   </div>
-  
   <script src="book.js"></script>
 
   <!-- Bootstrap JS -->
