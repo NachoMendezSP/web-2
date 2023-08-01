@@ -167,8 +167,33 @@ function displayComments(comments, users, currentUser, book) {
       const user = users.find(user => user.id === comment.userId);
       if (user) {
         const commentItem = document.createElement('div');
-        commentItem.classList.add('comment-item');
-        commentItem.innerHTML = `<strong>${user.username}:</strong> ${comment.text}`;
+        commentItem.classList.add('comment-item', 'd-flex', 'align-items-center', 'mb-3');
+
+        // Create a profile picture element using the first letter of the username
+        const profilePicture = document.createElement('div');
+        profilePicture.classList.add('profile-picture');
+        profilePicture.textContent = user.username.charAt(0).toUpperCase();
+        commentItem.appendChild(profilePicture);
+
+        // Create a container for the username and text
+        const textContainer = document.createElement('div');
+        textContainer.classList.add('ml-3');
+
+        // Create a paragraph for the username
+        const usernameElement = document.createElement('p');
+        usernameElement.classList.add('m-0', 'font-weight-bold');
+        usernameElement.textContent = user.username;
+        textContainer.appendChild(usernameElement);
+
+        // Create a paragraph for the comment text
+        const commentTextElement = document.createElement('p');
+        commentTextElement.classList.add('m-0');
+        commentTextElement.textContent = comment.text;
+        textContainer.appendChild(commentTextElement);
+
+        // Add the text container to the comment item
+        commentItem.appendChild(textContainer);
+
         commentsList.appendChild(commentItem);
       }
     });

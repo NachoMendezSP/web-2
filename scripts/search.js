@@ -38,7 +38,7 @@ function displayBooks(books, authors) {
     link.href = `book.html?id=${book.id}`;
     link.classList.add('card-link');
     const cardDiv = document.createElement('div');
-    cardDiv.classList.add('card');
+    cardDiv.classList.add('card', 'h-100');
     const img = document.createElement('img');
     img.src = book.image;
     img.classList.add('card-img-top');

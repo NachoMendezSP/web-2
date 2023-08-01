@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The eBook Emporium</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="navbar.js"></script>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/navbar.js"></script>
 </head>
 
 <body class="custom-background">
@@ -21,6 +21,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
+        <!-- Admin button hidden until an admin logs in-->
+        <li class="nav-item" id="admin-button-container" style="display: none;">
+          <a class="nav-link" href="admin.html">Admin</a>
+        </li>
         <li class="nav-item">
           <a id="nav-bar-login-btn" class="nav-link" href="index.html">Log out</a>
         </li>
@@ -38,6 +42,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#edit-book">Edit Book</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#user-management">User Management</a>
       </li>
     </ul>
     
@@ -101,172 +108,33 @@
         </div>
         <br>
       </div>
+
+      <!-- User Management Tab -->
+      <div class="tab-pane fade" id="user-management">
+        <div class="container">
+          <div class="row mt-3">
+            <div class="col-md-10">
+              <h2>User Management</h2>
+              <ul id="user-list" class="list-group">
+                <!-- List of users with expandable items will be dynamically populated here -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+
     </div>
     
   </div>
   
+  
+
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <!-- Custom script -->
-  <script>
-    // Fetch all books and populate the book list
-    function fetchBooks() {
-      fetch('http://localhost:3000/books')
-        .then(response => response.json())
-        .then(books => {
-          const bookList = document.getElementById('book-list');
-          bookList.innerHTML = '';
-
-          books.forEach(book => {
-            const listItem = document.createElement('li');
-            listItem.classList.add('list-group-item');
-            listItem.innerHTML = `<strong>Name:</strong> ${book.name}, <strong>Author:</strong> ${book.authorId}`;
-
-            const deleteButton = document.createElement('button');
-            deleteButton.classList.add('btn', 'btn-danger', 'btn-sm', 'float-right');
-            deleteButton.textContent = 'Delete';
-            deleteButton.addEventListener('click', () => deleteBook(book.id));
-
-            listItem.appendChild(deleteButton);
-            bookList.appendChild(listItem);
-          });
-        });
-    }
-
-    // Delete a book
-    function deleteBook(bookId) {
-      fetch(`http://localhost:3000/books/${bookId}`, { method: 'DELETE' })
-        .then(() => {
-          // Refresh book list after deletion
-          fetchBooks();
-        });
-    }
-
-    // Fetch all books and populate the edit book list
-    function fetchBooksForEditing() {
-      fetch('http://localhost:3000/books')
-        .then(response => response.json())
-        .then(books => {
-          const editBookList = document.getElementById('edit-book-list');
-          editBookList.innerHTML = '';
-
-          books.forEach(book => {
-            const listItem = document.createElement('li');
-            listItem.classList.add('list-group-item');
-            listItem.innerHTML = `
-              <div class="d-flex justify-content-between">
-                <div>
-                  <span><strong>Name:</strong> ${book.name}</span>
-                  <span><strong>Author:</strong> ${book.authorId}</span>
-                </div>
-                <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#edit-book-${book.id}">Edit</button>
-              </div>
-              <div id="edit-book-${book.id}" class="collapse">
-                <div class="form-group">
-                  <label for="edit-book-image-${book.id}">Image URL</label>
-                  <input type="text" id="edit-book-image-${book.id}" class="form-control" value="${book.image}">
-                </div>
-                <div class="form-group">
-                  <label for="edit-book-name-${book.id}">Book Name</label>
-                  <input type="text" id="edit-book-name-${book.id}" class="form-control" value="${book.name}">
-                </div>
-                <div class="form-group">
-                  <label for="edit-book-author-${book.id}">Author ID</label>
-                  <input type="text" id="edit-book-author-${book.id}" class="form-control" value="${book.authorId}">
-                </div>
-                <div class="form-group">
-                  <label for="edit-book-description-${book.id}">Description</label>
-                  <textarea id="edit-book-description-${book.id}" class="form-control">${book.description}</textarea>
-                </div>
-                <button class="btn btn-primary btn-sm" onclick="saveBookChanges(${book.id})">Save Changes</button>
-                <button class="btn btn-secondary btn-sm" data-toggle="collapse" data-target="#edit-book-${book.id}">Cancel</button>
-              </div>
-            `;
-
-            editBookList.appendChild(listItem);
-          });
-        });
-    }
-
-    // Save changes for an edited book
-    function saveBookChanges(bookId) {
-      const imageInput = document.getElementById(`edit-book-image-${bookId}`);
-      const nameInput = document.getElementById(`edit-book-name-${bookId}`);
-      const authorInput = document.getElementById(`edit-book-author-${bookId}`);
-      const descriptionInput = document.getElementById(`edit-book-description-${bookId}`);
-
-      const updatedBook = {
-        image: imageInput.value,
-        name: nameInput.value,
-        authorId: authorInput.value,
-        description: descriptionInput.value
-      };
-
-      fetch(`http://localhost:3000/books/${bookId}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedBook)
-      })
-        .then(() => {
-          // Refresh book list after saving changes
-          fetchBooksForEditing();
-        });
-    }
-
-    // Event listener for the add book form
-    const addBookForm = document.getElementById('add-book-form');
-    addBookForm.addEventListener('submit', event => {
-      event.preventDefault();
-
-      const nameInput = document.getElementById('add-book-name');
-      const authorInput = document.getElementById('add-book-author');
-      const imageInput = document.getElementById('add-book-image');
-      const descriptionInput = document.getElementById('add-book-description');
-
-      
-      const newBook = {
-        name: nameInput.value,
-        authorId: parseInt(authorInput.value),
-        genreId: 1,
-        image: imageInput.value,
-        description: descriptionInput.value,
-        downloads: 0
-      };
-
-      fetch('http://localhost:3000/books', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newBook)
-      })
-        .then(() => {
-          // Clear input fields after adding a book
-          nameInput.value = '';
-          authorInput.value = '';
-          imageInput.value = '';
-          descriptionInput.value = '';
-
-          // Refresh book list after adding a book
-          fetchBooks();
-        });
-    });
-
-    // Event listener for tab changes
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-      const targetTab = $(e.target).attr('href');
-
-      if (targetTab === '#delete-book') {
-        // Fetch books for deletion
-        fetchBooks();
-      } else if (targetTab === '#edit-book') {
-        // Fetch books for editing
-        fetchBooksForEditing();
-      }
-    });
-
-  </script>
+  <script src="scripts/admin.js"></script>
 </body>
 
 </html>

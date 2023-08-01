@@ -6,8 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The eBook Emporium</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="navbar.js"></script>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/navbar.js"></script>
+  <style>
+    /* Custom CSS for profile pictures in comments */
+    .profile-picture {
+      width: 40px;
+      height: 40px;
+      background-color: lightslategray;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .comment-item .profile-picture {
+      flex-shrink: 0;
+    }
+  </style>
 </head>
 
 <body class="custom-background">
@@ -21,6 +39,10 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
+        <!-- Admin button hidden until an admin logs in-->
+        <li class="nav-item" id="admin-button-container" style="display: none;">
+          <a class="nav-link" href="admin.html">Admin</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="books.html">Explore</a>
         </li>
@@ -57,7 +79,7 @@
             <button type="button" id="rate-button" class="btn btn-primary">Submit</button>
           </div>
           <p id="current-rating" class="mt-2"></p>
-          <a id="download-button" class="btn btn-primary btn-lg btn-download mt-2" href="#" download>Download</a>
+          <a id="download-button" class="btn btn-success btn-lg btn-download mt-2" href="#" download>Download</a>
         </div>
       </div>
     </div>
@@ -70,12 +92,12 @@
         <div class="form-group mt-3">
           <label for="comment-input">Leave a comment!</label>
           <input type="text" id="comment-input" class="form-control">
-          <button type="button" id="comment-button" class="btn btn-primary mt-2">Post</button>
+          <button type="button" id="comment-button" class="btn btn-dark mt-2">Post</button>
         </div>
       </div>
     </div>   
   </div>
-  <script src="book.js"></script>
+  <script src="scripts/book.js"></script>
 
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -17,7 +17,7 @@ function generateBookCard(book, author) {
   return `
     <div class="col-md-3">
       <a href="book.html?id=${book.id}" class="card-link">
-        <div class="card">
+        <div class="card h-100">
           <img src="${book.image}" class="card-img-top" alt="${book.name}">
           <div class="card-body">
             <h5 class="card-title">${book.name}</h5>

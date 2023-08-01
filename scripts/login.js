@@ -52,7 +52,14 @@ async function handleLogin(event) {
         window.location.href = 'admin.html';
       } else {
         // Redirect to index page for regular users
-        window.location.href = 'index.html';
+        // After successful login, retrieve the saved URL from local storage
+        const returnToUrl = localStorage.getItem('returnToUrl');
+
+        // Clear the saved URL from local storage
+        localStorage.removeItem('returnToUrl');
+
+        // Redirect the user back to the saved URL (or a default page if the saved URL is not available)
+        window.location.href = returnToUrl || 'index.html';
       }
     } else {
       // User not found, display an error message
