@@ -15,6 +15,10 @@
     {
       "id": 4,
       "name": "Horror"
+    },
+    {
+      "id": 5,
+      "name": "Test"
     }
   ],
   "authors": [
@@ -62,9 +66,9 @@
       "genreId": 4,
       "image": "media/book2.jpg",
       "description": "Tras veintisiete años de tranquilidad y lejanía una antigua promesa infantil les hace volver al lugar en el que vivieron su infancia y juventud como una terrible pesadilla. Regresan a Derry para enfrentarse con su pasado y enterrar definitivamente la amenaza que los amargó durante su niñez. Saben que pueden morir, pero son conscientes de que no conocerán la paz hasta que aquella cosa sea destruida para siempre. It es una de las novelas más ambiciosas de Stephen King, donde ha logrado perfeccionar de un modo muy personal las claves del género de terror.",
-      "downloads": 202,
-      "rating": 4.142857142857143,
-      "ratingsAmount": 7,
+      "downloads": 204,
+      "rating": 4.25,
+      "ratingsAmount": 8,
       "ratings": [
         4,
         4,
@@ -72,6 +76,7 @@
         5,
         2,
         4,
+        5,
         5
       ]
     },
@@ -160,6 +165,18 @@
         5,
         4
       ]
+    },
+    {
+      "name": "El Principito",
+      "authorId": 2,
+      "genreId": 1,
+      "image": "media/new.jpg",
+      "description": "Test",
+      "downloads": 0,
+      "rating": 5,
+      "ratingsAmount": 0,
+      "ratings": [],
+      "id": 9
     }
   ],
   "users": [
@@ -246,6 +263,18 @@
       "userId": 1,
       "text": "Scary",
       "id": 9
+    },
+    {
+      "bookId": 5,
+      "userId": 1,
+      "text": "Loved it",
+      "id": 10
+    },
+    {
+      "bookId": 2,
+      "userId": 1,
+      "text": "Amazing",
+      "id": 11
     }
   ]
 }

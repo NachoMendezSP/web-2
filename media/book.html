@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The eBook Emporium</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="scripts/navbar.js"></script>
+  <style>
+    /* Custom CSS for profile pictures in comments */
+    .profile-picture {
+      width: 40px;
+      height: 40px;
+      background-color: lightslategray;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .comment-item .profile-picture {
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+
+<body class="custom-background">
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">The eBook Emporium</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <!-- Admin button hidden until an admin logs in-->
+        <li class="nav-item" id="admin-button-container" style="display: none;">
+          <a class="nav-link" href="admin.html">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="books.html">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a id="nav-bar-login-btn" class="nav-link" href="login.html">Log in</a>
+        </li>
+        <li class="nav-item">
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" id="search-input" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" id="search-button" type="button">Search</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Main Page -->
+  
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-3 mt-3">
+        <!-- Image -->
+        <img id="book-image" class="img-fluid mb-3">
+      </div>
+      <div class="col-md-9 mt-3">
+        <!-- Book Details -->
+        <h1 id="book-title"></h1>
+        <h5 id="book-author" class="text-muted"></h5>
+        <p id="book-description"></p>
+        <div class="form-group">
+          <label for="rating-input">Rate this book!</label>
+          <div class="rating-input-container">
+            <input type="range" id="rating-input" class="form-range" min="1" max="5" step="1">
+            <button type="button" id="rate-button" class="btn btn-primary">Submit</button>
+          </div>
+          <p id="current-rating" class="mt-2"></p>
+          <a id="download-button" class="btn btn-success btn-lg btn-download mt-2" href="#" download>Download</a>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <!-- Comments Section -->
+        <h3>Comments</h3>
+        <p id="comments-message"></p>
+        <div id="comments-list"></div>
+        <div class="form-group mt-3">
+          <label for="comment-input">Leave a comment!</label>
+          <input type="text" id="comment-input" class="form-control">
+          <button type="button" id="comment-button" class="btn btn-dark mt-2">Post</button>
+        </div>
+      </div>
+    </div>   
+  </div>
+  <script src="scripts/book.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Event listener for the search button
+    const searchBtn = document.getElementById('search-button');
+    searchBtn.addEventListener('click', function () {
+      const searchInput = document.getElementById('search-input');
+      const searchQuery = searchInput.value;
+
+      // Redirect to search.html with the search query as a parameter
+      window.location.href = `search.html?query=${encodeURIComponent(searchQuery)}`;
+    });
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+
+</html>
